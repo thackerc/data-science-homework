@@ -10,7 +10,6 @@ df = pd.read_csv('./lucid_dataset_train.csv')
 y = df[['label']]
 x = df.drop(['label'], axis=1)
 
-
 print(x.info())
 print(x.shape)
 print(x.describe())
