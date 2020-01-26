@@ -34,24 +34,3 @@ xgb_grid = GridSearchCV(
 xgb_grid.fit(x, y.values.ravel())
 print(xgb_grid.best_score_)
 print(xgb_grid.best_estimator_)
-
-
-
-# xgboost = xgb.XGBClassifier(
-#     learning_rate=0.01,
-#     n_estimators=600,
-#     max_depth=6,
-#     gamma=6,
-#     subsample=1,
-#     colsample_bytree=0.95,
-#     objective="binary:logistic",
-# ).fit(x_train, y_train)
-
-
-# predictions = xgboost.predict(x_test)
-
-# xgb_mse = mean_squared_error(y_test, predictions)
-# print("ens (mse): ", xgb_mse)
-
-# xgb_acc = accuracy_score(y_test, predictions)
-# print("xgb acc: ", xgb_acc)
