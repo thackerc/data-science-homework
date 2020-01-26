@@ -1,5 +1,5 @@
-FROM python:2.7.15
-LABEL maintainer "random@gmail.com"
+FROM python:3.7.6
+LABEL maintainer "curtis.thacker@gmail.com"
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY simple_api.py simple_api.py
