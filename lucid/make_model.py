@@ -10,13 +10,24 @@ df = pd.read_csv('./lucid_dataset_train.csv')
 y = df[['label']]
 x = df.drop(['label'], axis=1)
 
-print(x.info())
-print(x.shape)
-print(x.describe())
+# print(x.info())
+# print(x.shape)
+# print(x.describe())
 
 
 # Build model
-model = xgb.XGBClassifier()
+model = xgb.XGBClassifier(silent=False, 
+                      scale_pos_weight=1,
+                      learning_rate=0.08,
+                      colsample_bytree = 0.4,
+                      subsample = 0.8,
+                      objective='binary:logistic', 
+                      n_estimators=200, 
+                      reg_alpha = 0.3,
+                      max_depth=3,
+                      gamma=10)
+
+
 model.fit(x.to_numpy(), y.values.ravel())
 
 # Evaluate the accuracy and error of the model
