@@ -16,17 +16,17 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 xgb_grid = GridSearchCV(
     estimator=xgb.XGBClassifier(),
     verbose=True,
-    cv=5,
+    cv=3,
     scoring="roc_auc",
     n_jobs=4,
     param_grid={
 
-        "learning_rate": [0.01, 0.02, 0.03, 0.05,  0.07, .1 ],
-        "n_estimators": [100, 300, 800],
-        "max_depth": [3, 4, 5],
+        "learning_rate": [0.07,  0.08, 0.09 ],
+        "n_estimators": [ 400 ],
+        "max_depth": [3, 4],
         "gamma": [0, 1, 5],
-        "subsample": [0.8, 0.9, 1],
-        "colsample_bytree": [0.3, 0.4, 0.5, 0.6, 0.8],
+        "subsample": [0.8, 0.9],
+        "colsample_bytree": [ 0.4, 0.5, 0.6, 0.8],
         "objective": ["binary:logistic"],
     },
 )

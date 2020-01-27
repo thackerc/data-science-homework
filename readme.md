@@ -6,11 +6,11 @@ Curtis Thacker
 
 A simple classifier for the lucid dataset can be found in the [lucid](./lucid) folder in this repo. It was developed using Python 3.7.6. The pickled version of the trained model is in the same directory. Accuracy: `0.974237190558434`. Mean Squared Error: `0.025762809441565917`
 
-* XGBoost is a good choice for this type of problem as it does all the bagging, boosting, pruning and normalization of the data for you. Particulary useful when the data set is annonymous.
-* The XGBoost model parameters were tuned and several other model types were tested in [./lucid/more.py](./lucid/more.py).
 * The lucid dataset is all continious data; so no dummies were needed and none of the columns needed to be dropped.
 * The labels don't give any information about how the data could be enhanced based on domain specific knowledge.
 * There were no missing values to address.
+* XGBoost is a good choice for this type of problem as it does all the bagging, boosting, pruning and normalization of the data for you. Particulary useful when the data set is annonymous.
+* The XGBoost model parameters were tuned and several other model types were tested.
 
 ## Updating and Adapting the Old Model
 
